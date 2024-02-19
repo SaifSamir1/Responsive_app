@@ -11,15 +11,23 @@ class UserInfo extends StatelessWidget {
     return Card(
       color: const Color(0xffFAFAFA),
       elevation: 0,
-      child: ListTile(
-        leading: SvgPicture.asset(image),
-        title: Text(
-          title,
-          style: AppStyles.styleSemiBold16,
-        ),
-        subtitle: Text(
-          subTitle,
-          style: AppStyles.styleRegular12,
+      child: Center(
+        child: ListTile(
+          leading: SvgPicture.asset(image),
+          title: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              title,
+              style: AppStyles.styleSemiBold16(context),
+            ),
+          ),
+          subtitle: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              subTitle,
+              style: AppStyles.styleRegular12(context),
+            ),
+          ),
         ),
       ),
     );
